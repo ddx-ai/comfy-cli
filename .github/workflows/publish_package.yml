@@ -5,14 +5,14 @@ on:
     types: [ created ]
 
 permissions:
-  contents: read
+  contents: write  # ← ここを修正
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     permissions:
-      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
     steps:
       - uses: actions/checkout@v4
 
@@ -46,3 +46,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: dist/*
+          token: ${{ secrets.GITHUB_TOKEN }}  # ← ここを追加
