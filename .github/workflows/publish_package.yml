@@ -2,17 +2,16 @@ name: Build and Release
 
 on:
   release:
-    types: [ created ]
+    types: [created]
 
 permissions:
-  contents: write  # ← ここを修正
+  contents: write
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -42,11 +41,8 @@ jobs:
       - name: Build distribution
         run: python -m build --sdist --wheel --outdir dist/
 
-      - name: Set up GitHub CLI
-        run: sudo apt-get install gh
-
-      - name: Create GitHub Release and Upload Assets
+      - name: Upload release assets using GitHub CLI
         run: |
-          gh release create v${{ env.VERSION }} dist/* --title "Release v${{ env.VERSION }}" --notes "Auto-generated release"
+          gh release upload v${{ env.VERSION }} dist/* --repo ${{ github.repository }} --clobber
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
