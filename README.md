@@ -1,7 +1,9 @@
 # Comfy-Cli: A Command Line Tool for ComfyUI
 
 Fork:
+
 Modify it so that it passes ComfyUI's checks even with https://github.com/patientx/ComfyUI-Zluda.
+
 Modify it so that the model is downloaded without checking the file name.
 
 
