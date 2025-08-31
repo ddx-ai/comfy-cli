@@ -253,7 +253,7 @@ def download(
         if local_filename is None:
             local_filename = ui.prompt_input("Enter filename to save model as")
         else:
-            local_filename = ui.prompt_input("Enter filename to save model as", default=local_filename)
+            local_filename = local_filename
     else:
         local_filename = filename
 
