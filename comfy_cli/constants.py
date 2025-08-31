@@ -58,7 +58,7 @@ COMFY_ORIGIN_URL_CHOICES = [
     "https://github.com/drip-art/ComfyUI.git",
     "https://github.com/comfyanonymous/ComfyUI",
     "https://github.com/drip-art/ComfyUI",
-    "https://github.com/ddx-ai/ComfyUI-Zluda.git",
+    "https://github.com/patientx/ComfyUI-Zluda",
 ]
 
 
