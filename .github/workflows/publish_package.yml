@@ -42,8 +42,11 @@ jobs:
       - name: Build distribution
         run: python -m build --sdist --wheel --outdir dist/
 
-      - name: Upload release assets
-        uses: softprops/action-gh-release@v1
-        with:
-          files: dist/*
-          token: ${{ secrets.GITHUB_TOKEN }}  # ← ここを追加
+      - name: Set up GitHub CLI
+        run: sudo apt-get install gh
+
+      - name: Upload release assets using GitHub CLI
+        run: |
+          gh release upload ${{ env.VERSION }} dist/* --repo ${{ github.repository }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
