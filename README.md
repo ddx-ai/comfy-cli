@@ -1,5 +1,10 @@
 # Comfy-Cli: A Command Line Tool for ComfyUI
 
+Fork:
+Modify it so that it passes ComfyUI's checks even with https://github.com/patientx/ComfyUI-Zluda.
+Modify it so that the model is downloaded without checking the file name.
+
+
 [![Test ComfyUI Example Workflows](https://github.com/Comfy-Org/ComfyUI-Mirror/actions/workflows/test-workflows.yaml/badge.svg)](https://github.com/Comfy-Org/ComfyUI-Mirror/actions/workflows/test-workflows.yaml)
 
 [![codecov](https://codecov.io/github/Comfy-Org/comfy-cli/graph/badge.svg?token=S64WJWD2ZX)](https://codecov.io/github/Comfy-Org/comfy-cli)
