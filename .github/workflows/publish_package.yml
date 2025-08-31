@@ -47,6 +47,6 @@ jobs:
 
       - name: Upload release assets using GitHub CLI
         run: |
-          gh release upload ${{ env.VERSION }} dist/* --repo ${{ github.repository }}
+          gh release upload v${{ env.VERSION }} dist/* --repo ${{ github.repository }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
