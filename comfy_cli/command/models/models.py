@@ -281,7 +281,7 @@ def download(
             local_filename = ui.prompt_input("Enter filename to save model as")
         else:
             local_filename = local_filename
-        else:
+    else:
             local_filename = filename
 
     if relative_path is None:
